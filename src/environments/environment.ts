@@ -4,7 +4,8 @@
 
 export const environment = {
   production: false,
-  apiURL: "https://pokeapi.co/api/v2/"
+  apiURL: "https://pokeapi.co/api/v2",
+  usersURL: "http://localhost:9000"
 };
 
 /*

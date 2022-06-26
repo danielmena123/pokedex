@@ -1,0 +1,50 @@
+<mat-toolbar color="primary">
+    <span>Pokedex</span>
+    <span class="example-spacer"></span>
+    <button mat-icon-button aria-label="Example icon-button with share icon" (click)="Logout()">
+      <mat-icon>logout</mat-icon>
+    </button>
+</mat-toolbar>
+
+<div class="container mt-5">
+  <div class="row header">
+    <h1>Lista de Pokemones</h1>
+    <mat-form-field>
+      <mat-label>Pokemon name</mat-label>
+      <input matInput type="text" [formControl]="search" (keydown.enter)="onSearchPokemon()" placeholder="pikachu or 25">
+    </mat-form-field>
+  </div>
+  
+  <div *ngIf="!isSearching">
+    <div class="row">    
+      <div class="col-lg-4" *ngFor="let pokemon of pokemons">
+        <div class="card m-2">          
+          <div class="card-body">
+            <h2 class="card-title text-center"><strong>{{pokemon.name}}</strong></h2>
+          </div>
+          <div class="contenedor-img p-2">
+            <img class="img_bg" src="../../../assets/images/pokeball-background.png">
+            <img class="img_image" src="https://projectpokemon.org/images/normal-sprite/{{pokemon.name}}.gif">
+          </div>
+        </div>
+      </div>  
+    </div>
+  </div>  
+
+  <div *ngIf="isSearching">
+    <div class="row">    
+      <div class="col-lg-4">
+        <div class="card m-2">          
+          <div class="card-body">
+            <h2 class="card-title text-center"><strong>{{searchPokemon.name}}</strong></h2>
+          </div>
+          <div class="contenedor-img p-2">
+            <img class="img_bg" src="../../../assets/images/pokeball-background.png">
+            <img class="img_image" src="https://projectpokemon.org/images/normal-sprite/{{searchPokemon.name}}.gif">
+          </div>
+        </div>
+      </div>  
+    </div>
+  </div>
+
+</div>

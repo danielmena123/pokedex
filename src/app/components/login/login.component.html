@@ -1,0 +1,54 @@
+<div class="login">
+    <mat-card class="card-principal">
+        <mat-card-content>
+            <mat-card-title><h3>Bienvenidos a la Pokedex</h3></mat-card-title>
+            <hr>
+            <mat-tab-group [selectedIndex]="selected.value" (selectedIndexChange)="selected.setValue($event)">
+                <mat-tab label="Iniciar Sesion">
+                    <form [formGroup]="loginForm" (ngSubmit)="Ingresar()">
+                        <mat-form-field class="example-full-width" appearance="fill">
+                            <mat-label>Ingrese su Correo Electronico</mat-label>
+                            <input formControlName="CorreoElectronico" matInput placeholder="pat@example.com" required>
+                        </mat-form-field>
+                        <mat-form-field class="example-full-width" appearance="fill">
+                            <mat-label>Ingrese su Contraseña</mat-label>
+                            <input formControlName="Contraseña" matInput [type]="hide ? 'password' : 'text'">
+                            <button type="button" mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+                                <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                            </button>
+                        </mat-form-field>
+                        <button class="example-full-width" mat-raised-button color="primary" [disabled]="loginForm.invalid">Ingresar</button>
+                    </form>
+                </mat-tab>
+                <mat-tab label="Registrarse">
+                    <form [formGroup]="registerForm" (ngSubmit)="Registrar()">
+                        <mat-form-field class="example-full-width" appearance="fill">
+                            <mat-label>Nombres</mat-label>
+                            <input formControlName="Nombres" matInput type="text" required>
+                        </mat-form-field>
+                        <mat-form-field class="example-full-width" appearance="fill">
+                            <mat-label>Apellidos</mat-label>
+                            <input formControlName="Apellidos" matInput type="text" required>
+                        </mat-form-field>
+                        <mat-form-field class="example-full-width" appearance="fill">
+                            <mat-label>Correo Electronico</mat-label>
+                            <input formControlName="CorreoElectronico" matInput placeholder="pat@example.com" required>
+                        </mat-form-field>
+                        <mat-form-field class="example-full-width" appearance="fill">
+                            <mat-label>Telefono</mat-label>
+                            <input formControlName="Telefono" type="tel" matInput placeholder="555-555-1234">
+                        </mat-form-field>
+                        <mat-form-field class="example-full-width" appearance="fill">
+                            <mat-label>Contraseña</mat-label>
+                            <input formControlName="Contraseña" matInput [type]="hide ? 'password' : 'text'">
+                            <button type="button" mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+                                <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                            </button>
+                        </mat-form-field>
+                        <button class="example-full-width" mat-raised-button color="primary" [disabled]="registerForm.invalid">Registrarse</button>
+                    </form>
+                </mat-tab>
+            </mat-tab-group>
+        </mat-card-content>
+    </mat-card>
+</div>

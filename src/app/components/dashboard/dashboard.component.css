@@ -1,0 +1,32 @@
+table {
+    width: 100%;
+  }
+  
+  .mat-form-field {
+    font-size: 14px;
+    width: 100%;
+  }
+  
+  td, th {
+    width: 25%;
+  }
+
+  .example-spacer {
+    flex: 1 1 auto;
+  }
+
+  .contenedor-img{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .img_bg{
+    position: relative;
+    width: 50%;
+    opacity: 0.75;
+  }
+
+  .img_image{
+    position: absolute;
+  }
