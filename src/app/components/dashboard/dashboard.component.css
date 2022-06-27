@@ -30,3 +30,8 @@ table {
   .img_image{
     position: absolute;
   }
+
+  .card{
+    border-radius: 15px;
+    box-shadow: 2px 2px 5px #999;
+  }

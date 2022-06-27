@@ -13,6 +13,7 @@ import { PokemonesService } from 'src/app/services/pokemones.service';
 })
 export class DashboardComponent implements OnInit  {
 
+  isAuthenticated = false;
   search: FormControl = new FormControl('');
   pokemons: Pokemones[] = [];
 
@@ -29,6 +30,10 @@ export class DashboardComponent implements OnInit  {
     private snackBar: MatSnackBar,
   ) {
     this.offset = 0 ;
+    var res = sessionStorage.getItem('isAuthorized');
+    if(res != null){
+      this.isAuthenticated = JSON.parse(res);
+    }
   }
 
   ngOnInit() {

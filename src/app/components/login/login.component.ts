@@ -38,6 +38,7 @@ export class LoginComponent implements OnInit {
    }
 
   ngOnInit(): void {
+    sessionStorage.setItem('isAuthorized', JSON.stringify(false));
   }
 
   Ingresar(){
@@ -48,6 +49,7 @@ export class LoginComponent implements OnInit {
 
     this.usuariosService.login(this.usuario).subscribe(res => {
       sessionStorage.setItem('token', JSON.stringify(res.response));
+      sessionStorage.setItem('isAuthorized', JSON.stringify(true));
       this.router.navigate(['dashboard'])
     },
     err => {

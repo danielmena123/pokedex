@@ -1,4 +1,4 @@
-<mat-toolbar color="primary">
+<mat-toolbar *ngIf="isAuthenticated == true" color="primary">
     <span>Pokedex</span>
     <span class="example-spacer"></span>
     <button mat-icon-button aria-label="Example icon-button with share icon" (click)="Logout()">
@@ -6,7 +6,7 @@
     </button>
 </mat-toolbar>
 
-<div class="container mt-5">
+<div *ngIf="isAuthenticated == true" class="container mt-5">
   <div class="row header">
     <h1>Lista de Pokemones</h1>
     <mat-form-field>
