@@ -17,7 +17,7 @@ export class PokemonesService {
   ) { }
 
 
-  getPokemones(offset: number, limit: number = 30) : Observable<Pokemones[]>{
+  getPokemones(offset: number, limit: number = 20) : Observable<Pokemones[]>{
     return this.http.get<Pokemones[]>(`${this.apiURL}/pokemon?offset=${offset}$limit=${30}`)
             .pipe(
               map((x: any) => x.results)
